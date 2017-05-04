@@ -1,8 +1,8 @@
 # Asw primo progetto 
 
-## dominio applicativo
+## Dominio applicativo
 
-il servizio S fornisce due operazioni:
+Il servizio S fornisce due operazioni:
  1. `/S/<attore>/<anno>` restituisce informazioni (casuali) sull'`<attore>` (la nazionalità) e sul numero (casuale) di premi vinti in        quell'anno.
 2. `/S/<attore>` restituisce invece informazioni (casuali) sull'`<attore>` (nazionalità) e sul numero (casuale) dei premi vinti nella sua carriera.
 Ad esempio, la richiesta /S/Benigni/1997, sulla porta 8080, potrebbe restituire "Benigni è un attore italiano ed ha vinto 5 premi nel 1997".    
