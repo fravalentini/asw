@@ -4,7 +4,8 @@
 
 Il servizio S fornisce due operazioni:
  1. `/S/<attore>/<anno>` restituisce informazioni (casuali) sull'`<attore>` (la nazionalità) e sul numero (casuale) di premi vinti in        quell'anno.
-2. `/S/<attore>` restituisce invece informazioni (casuali) sull'`<attore>` (nazionalità) e sul numero (casuale) dei premi vinti nella sua carriera.
+ 2. `/S/<attore>` restituisce invece informazioni (casuali) sull'`<attore>` (nazionalità) e sul numero (casuale) dei premi vinti nella  sua carriera.
+
 Ad esempio, la richiesta /S/Benigni/1997, sulla porta 8080, potrebbe restituire "Benigni è un attore italiano ed ha vinto 5 premi nel 1997".    
 La richiesta /S/Benigni, sulla medesima porta, potrebbe restituire "Benigni è un attore italiano ed ha vinto 50 premi nella sua carriera".    
 Il servizio S viene implementato con due servizi secondari S1 e S2 nel seguente modo: la richiesta `S1/<attore>`, sulla porta 8081, restituisce la nazionalità (casuale) dell'attore. (ad esempio la richiesta /S1/Benigni potrebbe restituire "italiano").    
