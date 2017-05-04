@@ -1,0 +1,16 @@
+--- 
+spring: 
+  application: 
+    name: test
+server: 
+  port: ${PORT:${SERVER_PORT:0}}
+
+--- 
+spring: 
+  profiles: actor
+  application: 
+    name: actor
+server: 
+  port: 8080
+  
+--- 
