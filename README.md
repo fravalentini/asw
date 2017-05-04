@@ -5,18 +5,16 @@
 il servizio S fornisce due operazioni:
  1. `/S/<attore>/<anno>` restituisce informazioni (casuali) sull'`<attore>` (la nazionalità) e sul numero (casuale) di premi vinti in        quell'anno.
 2. `/S/<attore>` restituisce invece informazioni (casuali) sull'`<attore>` (nazionalità) e sul numero (casuale) dei premi vinti nella sua carriera.
-Ad esempio,
-la richiesta /S/Benigni/1997, sulla porta 8080, potrebbe restituire "Benigni è un attore italiano ed ha vinto 5 premi nel 1997".
-la richiesta /S/Benigni, sulla medesima porta, potrebbe restituire "Benigni è un attore italiano ed ha vinto 50 premi nella sua carriera".
-il servizio S viene implementato con due servizi secondari S1 e S2 nel seguente modo:
-la richiesta `S1/<attore>`, sulla porta 8081, restituisce la nazionalità (casuale) dell'attore. (ad esempio la richiesta /S1/Benigni potrebbe restituire "italiano").
-la richiesta `S2/<attore>/<anno>`, sulla porta 8082, restituisce il numero (casuale) dei premi vinti dall'attore nell'anno specificato (ad esempio /S2/Benigni/1997 potrebbe restituire 5).
-la richiesta `S2/<attore>` restituisce il numero (casuale) dei premi vinti dall'attore nella sua carriera (ad esempio /S2/Benigni potrebbe restituire 50).
+Ad esempio, la richiesta /S/Benigni/1997, sulla porta 8080, potrebbe restituire "Benigni è un attore italiano ed ha vinto 5 premi nel 1997".    
+La richiesta /S/Benigni, sulla medesima porta, potrebbe restituire "Benigni è un attore italiano ed ha vinto 50 premi nella sua carriera".    
+Il servizio S viene implementato con due servizi secondari S1 e S2 nel seguente modo: la richiesta `S1/<attore>`, sulla porta 8081, restituisce la nazionalità (casuale) dell'attore. (ad esempio la richiesta /S1/Benigni potrebbe restituire "italiano").    
+La richiesta `S2/<attore>/<anno>`, sulla porta 8082, restituisce il numero (casuale) dei premi vinti dall'attore nell'anno specificato (ad esempio /S2/Benigni/1997 potrebbe restituire 5).    
+La richiesta `S2/<attore>` restituisce il numero (casuale) dei premi vinti dall'attore nella sua carriera (ad esempio /S2/Benigni potrebbe restituire 50).    
 Il servizio S risponde al suo client usufruendo dei servizi S1 e S2 e integrando le loro risposte.
 
 ### Build
 
-In pratica, per compilare e assemblare ciascuna applicazione, bisogna 
+Per compilare e assemblare ciascuna applicazione, bisogna 
   1. posizionarsi nella cartella principale dell'applicazione di interesse - ad esempio `~/asw/asw_primo_progetto/actor-service`
   2. per compilare e assemblare l'applicazione, usare il comando `gradle build` 
 
