@@ -22,7 +22,7 @@ Per compilare e assemblare ciascuna applicazione, bisogna
 ### Esecuzione
 
 Per eseguire ciascuna applicazione: 
-  1. posizionarsi nella cartella principale dell'applicazione di interesse - ad esempio `~/asw/actor-service`
+  1. posizionarsi nella cartella principale dell'applicazione di interesse - ad esempio `~/asw/asw_primo_progetto/actor-service`
   2. eseguire il comando `sh run-actor-service.sh` 
   
 #### Esecuzione dell'applicazione per la generazione di frasi casuali 
