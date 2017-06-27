@@ -1,0 +1,22 @@
+--- 
+spring: 
+  application: 
+    name: test
+server: 
+  port: ${PORT:${SERVER_PORT:0}}
+awards: to,pass,the,test
+
+--- 
+spring: 
+  profiles: award
+  application: 
+    name: award
+awards: 0,1,2,3,4,5,6,7,8,9
+eureka:
+   client:
+      serviceUrl:
+          defaultZone: http://eureka:8761/eureka/
+server: 
+  port: ${PORT:${SERVER_PORT:0}}
+  
+--- 

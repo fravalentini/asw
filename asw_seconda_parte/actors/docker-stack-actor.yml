@@ -1,0 +1,51 @@
+version: '3'
+services:
+  eureka:
+    image: swarm.inf.uniroma3.it:5000/eureka-server-img-9013
+#    container_name: eureka 
+#    ports:
+#    - "8761:8761"
+    deploy:
+      placement:
+        constraints: [node.role == manager]   
+  nationality:
+    image: swarm.inf.uniroma3.it:5000/nationality-img-9013
+#    ports: 
+#    - "8080"
+    depends_on:
+    - "eureka"
+    command: ["-jar", "-Dspring.profiles.active=nationality", "nationality.jar"]
+    deploy:
+      mode: replicated
+      replicas: 1    
+  award:
+    image: swarm.inf.uniroma3.it:5000/award-img-9013
+#    ports: 
+#    - "8080"
+    depends_on:
+    - "eureka"
+    command: ["-jar", "-Dspring.profiles.active=award", "award.jar"]
+    deploy:
+      mode: replicated
+      replicas: 1    
+  actor:
+    image: swarm.inf.uniroma3.it:5000/actor-img-9013
+#    ports: 
+#    - "8080"
+    depends_on:
+    - "eureka"
+    deploy:
+      mode: replicated
+      replicas: 2    
+  zuul:
+    image: swarm.inf.uniroma3.it:5000/zuul-img-9013
+#    container_name: zuul 
+    depends_on:
+    - "eureka"
+    ports:
+    - "9013:8080"
+
+
+
+
+

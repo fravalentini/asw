@@ -1,0 +1,23 @@
+--- 
+spring: 
+  application: 
+    name: test
+server: 
+  port: ${PORT:${SERVER_PORT:0}}
+nationalities: to,pass,the,test
+
+--- 
+spring: 
+  profiles: nationality
+  application: 
+    name: nationality
+nationalities: italiano,inglese,americano,francese,giapponese
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8010/eureka/
+server: 
+  port: ${PORT:${SERVER_PORT:0}}
+  
+--- 
